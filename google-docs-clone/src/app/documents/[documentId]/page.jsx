@@ -7,10 +7,9 @@ const DocumentIdPage = () => {
   const { documentId } = useParams();
 
   return (
-    <>
-      <div>DocumentIdPage : {documentId}</div>
+    <div className="min-h-screen">
       <Editor />
-    </>
+    </div>
   );
 };
 
