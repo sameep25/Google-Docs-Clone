@@ -1,7 +1,11 @@
 "use client";
 
 import { useEditor, EditorContent } from "@tiptap/react";
+import { TaskItem, TaskList } from "@tiptap/extension-list";
+import { TableKit } from "@tiptap/extension-table";
+import Image from "@tiptap/extension-image";
 import StarterKit from "@tiptap/starter-kit";
+import ImageResize from "tiptap-extension-resize-image";
 
 const Editor = () => {
   const editor = useEditor({
@@ -12,8 +16,34 @@ const Editor = () => {
           "focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] w-[816px] pt-10 px-8 pb-10 cursor-text",
       },
     },
-    extensions: [StarterKit],
-    content: "",
+    extensions: [
+      StarterKit,
+      ImageResize.configure({
+        inline: true,
+      }),
+      TaskItem.configure({ nested: true }),
+      TaskList,
+      Image,
+      TableKit.configure({
+        table: { resizable: true },
+      }),
+    ],
+    content: `
+    <table>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th colspan="3">Description</th>
+        </tr>
+        <tr>
+          <td>Cyndi Lauper</td>
+          <td>Singer</td>
+          <td>Songwriter</td>
+          <td>Actress</td>
+        </tr>
+      </tbody>
+    </table>
+  `,
     // Don't render immediately on the server to avoid SSR issues
     immediatelyRender: false,
     autofocus: true,
