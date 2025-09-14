@@ -17,6 +17,7 @@ import {
 import { useEditorStore } from "@/store/use-editor-store";
 import { Separator } from "@/components/ui/separator";
 import TextColorButton from "@/app/components/TextColorButton";
+import HighlightColorButton from "@/app/components/HighlightColorButton";
 
 const Toolbar = () => {
   const { editor } = useEditorStore();
@@ -133,6 +134,7 @@ const Toolbar = () => {
       {/* Text color */}
       <TextColorButton />
       {/* Highlight color */}
+      <HighlightColorButton />
       <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
       {/* Link */}
       {/* Image */}
