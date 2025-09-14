@@ -7,6 +7,9 @@ import Image from "@tiptap/extension-image";
 import StarterKit from "@tiptap/starter-kit";
 import ImageResize from "tiptap-extension-resize-image";
 import { TextStyle, FontFamily } from "@tiptap/extension-text-style";
+import Highlight from "@tiptap/extension-highlight";
+import { Color } from "@tiptap/extension-text-style";
+// import { Color } from "react-color";
 
 import { useEditorStore } from "@/store/use-editor-store";
 
@@ -47,6 +50,7 @@ const Editor = () => {
           "focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] w-[816px] pt-10 px-8 pb-10 cursor-text",
       },
     },
+
     extensions: [
       StarterKit,
       ImageResize.configure({
@@ -60,23 +64,11 @@ const Editor = () => {
       }),
       TextStyle,
       FontFamily,
+      Color,
+      Highlight.configure({ multicolor: true }),
     ],
-    content: `
-    <table>
-      <tbody>
-        <tr>
-          <th>Name</th>
-          <th colspan="3">Description</th>
-        </tr>
-        <tr>
-          <td>Cyndi Lauper</td>
-          <td>Singer</td>
-          <td>Songwriter</td>
-          <td>Actress</td>
-        </tr>
-      </tbody>
-    </table>
-  `,
+
+    content: ``,
     // Don't render immediately on the server to avoid SSR issues
     immediatelyRender: false,
     autofocus: true,

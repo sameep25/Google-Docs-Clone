@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useEditorStore } from "@/store/use-editor-store";
 import { Separator } from "@/components/ui/separator";
+import TextColorButton from "@/app/components/TextColorButton";
 
 const Toolbar = () => {
   const { editor } = useEditorStore();
@@ -130,6 +131,7 @@ const Toolbar = () => {
         />
       ))}
       {/* Text color */}
+      <TextColorButton />
       {/* Highlight color */}
       <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
       {/* Link */}

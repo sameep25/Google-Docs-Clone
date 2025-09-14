@@ -20,7 +20,6 @@ const FontFamilyButton = () => {
     { label: "Verdana", value: "Verdana" },
   ];
 
-  console.log(editor?.getAttributes("textStyle").fontFamily);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
