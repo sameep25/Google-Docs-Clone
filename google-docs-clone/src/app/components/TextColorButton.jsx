@@ -19,11 +19,9 @@ const TextColorButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 mb-2 min-w-7 flex flex-col items-center justify-between hover:bg-neutral-200/80 p-2 overflow-hidden rounded-sm text-sm ml-1">
+        <button className="text-sm h-7 min-w-7 flex flex-col items-center justify-center rounded-sm hover:bg-[#dde3ec]">
           <span className="text-xs">A</span>
-          <div className="h-1 w-full" style={{ background: value }}>
-            s
-          </div>
+          <div className="h-1.5 w-3/4" style={{ background: value }}></div>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-2.5">
