@@ -19,9 +19,12 @@ const HighlightColorButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 mt-1 min-w-7 flex flex-col items-center justify-between hover:bg-neutral-200/80 p-2 overflow-hidden rounded-sm text-sm ml-1">
+        <button className="text-sm h-7 min-w-7 flex flex-col items-center justify-center rounded-sm hover:bg-[#dde3ec]">
           <HighlighterIcon className="size-4" />
-          <div className="h-1 w-full" style={{ background: value }}></div>
+          <div
+            className="h-1.5 w-3/4 border-[0.5px] border-black"
+            style={{ background: value }}
+          ></div>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-2.5">
