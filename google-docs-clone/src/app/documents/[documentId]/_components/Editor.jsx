@@ -9,7 +9,7 @@ import ImageResize from "tiptap-extension-resize-image";
 import { TextStyle, FontFamily } from "@tiptap/extension-text-style";
 import Highlight from "@tiptap/extension-highlight";
 import { Color } from "@tiptap/extension-text-style";
-// import { Color } from "react-color";
+import Link from "@tiptap/extension-link";
 
 import { useEditorStore } from "@/store/use-editor-store";
 
@@ -66,6 +66,12 @@ const Editor = () => {
       FontFamily,
       Color,
       Highlight.configure({ multicolor: true }),
+      Link.configure({
+        openOnClick: false,
+        autolink: false,
+        protocols: ["ftp", "mailto", "https", "http"],
+        defaultProtocol: "https",
+      }),
     ],
 
     content: ``,
