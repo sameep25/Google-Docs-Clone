@@ -60,7 +60,7 @@ const ImageButton = () => {
             <ImageIcon className="size-4" />
           </button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="flex items-center gap-x-2">
+        <DropdownMenuContent className="flex flex-col items-left gap-x-2">
           <DropdownMenuItem className="hover:bg-[#dedede]" onClick={onUpload}>
             <UploadIcon className="size-4 " /> Upload
           </DropdownMenuItem>
