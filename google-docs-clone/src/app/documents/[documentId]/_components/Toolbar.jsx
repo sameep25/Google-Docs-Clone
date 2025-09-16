@@ -21,6 +21,7 @@ import HighlightColorButton from "@/app/components/HighlightColorButton";
 import LinkButton from "@/app/components/LinkButton";
 import ImageButton from "@/app/components/ImageButton";
 import AlignButton from "@/app/components/AlignButton";
+import ListButton from "@/app/components/ListButton";
 
 const Toolbar = () => {
   const { editor } = useEditorStore();
@@ -148,6 +149,7 @@ const Toolbar = () => {
       <AlignButton />
       {/* Line Height */}
       {/* List */}
+      <ListButton />
 
       {sections[2].map((item) => (
         <ToolbarButton
