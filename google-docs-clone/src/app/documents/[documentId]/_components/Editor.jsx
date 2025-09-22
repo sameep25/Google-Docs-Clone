@@ -12,8 +12,10 @@ import { Color } from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import { FontSizeExtension } from "@/extensions/font-size";
+import { LineHeightExtension } from "@/extensions/line-height";
 
 import { useEditorStore } from "@/store/use-editor-store";
+import Ruler from "@/app/components/Ruler";
 
 const Editor = () => {
   const { setEditor } = useEditorStore();
@@ -59,6 +61,10 @@ const Editor = () => {
         types: ["textStyle"],
         defaultSize: "14px",
       }),
+      LineHeightExtension.configure({
+        types: ["paragraph", "heading"],
+        defaultLineHeight: "normal",
+      }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
@@ -91,6 +97,7 @@ const Editor = () => {
 
   return (
     <div className="size-full overflow-y-auto bg-[#f9fbfd] px-4 print:p-0 print:bg-white print:overflow-visible">
+      <Ruler />
       <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
         <EditorContent editor={editor} />
       </div>

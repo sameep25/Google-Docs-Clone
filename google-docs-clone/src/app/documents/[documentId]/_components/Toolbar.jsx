@@ -23,6 +23,7 @@ import ImageButton from "@/app/components/ImageButton";
 import AlignButton from "@/app/components/AlignButton";
 import ListButton from "@/app/components/ListButton";
 import FontSizeButton from "@/app/components/FontSizeButton";
+import LineHeightButton from "@/app/components/LineHeightButton";
 
 const Toolbar = () => {
   const { editor } = useEditorStore();
@@ -115,11 +116,10 @@ const Toolbar = () => {
           icon={item.icon}
         />
       ))}
-      <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
 
       {/* fonts */}
-      <FontFamilyButton />
       <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
+      <FontFamilyButton />
 
       {/* Headings */}
       <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
@@ -131,7 +131,7 @@ const Toolbar = () => {
       <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
       <FontSizeButton />
 
-      <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1" />
+      <Separator orientation="vertical" className="h-6 bg-gray-400 ml-1 " />
       {/* tools-2 bold,italic */}
       {sections[1].map((item) => (
         <ToolbarButton
@@ -154,6 +154,7 @@ const Toolbar = () => {
       {/* Align */}
       <AlignButton />
       {/* Line Height */}
+      <LineHeightButton />
       {/* List */}
       <ListButton />
 

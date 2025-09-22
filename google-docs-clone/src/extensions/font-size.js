@@ -6,7 +6,7 @@ export const FontSizeExtension = Extension.create({
   addOptions() {
     return {
       types: ["textStyle"],
-      defaultSize: "14px",
+      defaultSize: "16px",
     };
   },
 
