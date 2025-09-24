@@ -49,7 +49,7 @@ const Editor = () => {
 
     editorProps: {
       attributes: {
-        style: "paddinf-left:56px ; padding:right:56px ;",
+        style: "padding-left:56px ; padding-right:56px ;",
         class:
           "focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] w-[816px] pt-10 px-8 pb-10 cursor-text",
       },
