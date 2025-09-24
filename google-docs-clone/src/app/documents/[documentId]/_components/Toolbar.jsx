@@ -1,7 +1,7 @@
 import React from "react";
-import ToolbarButton from "@/app/components/ToolbarButton";
-import FontFamilyButton from "@/app/components/FontFamilyButton";
-import HeadingLevelButton from "@/app/components/HeadingLevelButton";
+import ToolbarButton from "@/app/components/toolbar_components/ToolbarButton";
+import FontFamilyButton from "@/app/components/toolbar_components/FontFamilyButton";
+import HeadingLevelButton from "@/app/components/toolbar_components/HeadingLevelButton";
 import {
   Undo2Icon,
   Redo2Icon,
@@ -16,14 +16,14 @@ import {
 } from "lucide-react";
 import { useEditorStore } from "@/store/use-editor-store";
 import { Separator } from "@/components/ui/separator";
-import TextColorButton from "@/app/components/TextColorButton";
-import HighlightColorButton from "@/app/components/HighlightColorButton";
-import LinkButton from "@/app/components/LinkButton";
-import ImageButton from "@/app/components/ImageButton";
-import AlignButton from "@/app/components/AlignButton";
-import ListButton from "@/app/components/ListButton";
-import FontSizeButton from "@/app/components/FontSizeButton";
-import LineHeightButton from "@/app/components/LineHeightButton";
+import TextColorButton from "@/app/components/toolbar_components/TextColorButton";
+import HighlightColorButton from "@/app/components/toolbar_components/HighlightColorButton";
+import LinkButton from "@/app/components/toolbar_components/LinkButton";
+import ImageButton from "@/app/components/toolbar_components/ImageButton";
+import AlignButton from "@/app/components/toolbar_components/AlignButton";
+import ListButton from "@/app/components/toolbar_components/ListButton";
+import FontSizeButton from "@/app/components/toolbar_components/FontSizeButton";
+import LineHeightButton from "@/app/components/toolbar_components/LineHeightButton";
 
 const Toolbar = () => {
   const { editor } = useEditorStore();
