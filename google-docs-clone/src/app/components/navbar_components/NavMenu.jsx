@@ -179,24 +179,36 @@ const NavMenu = () => {
                 Text
               </MenubarSubTrigger>
               <MenubarSubContent>
-                <MenubarItem>
+                <MenubarItem
+                  onClick={() => editor?.chain().focus().toggleBold().run()}
+                >
                   <BoldIcon /> Bold <MenubarShortcut>Ctrl+B</MenubarShortcut>
                 </MenubarItem>
-                <MenubarItem>
+                <MenubarItem
+                  onClick={() => editor?.chain().focus().toggleItalic().run()}
+                >
                   <ItalicIcon /> Italic{" "}
                   <MenubarShortcut>Ctrl+I</MenubarShortcut>
                 </MenubarItem>
-                <MenubarItem>
+                <MenubarItem
+                  onClick={() =>
+                    editor?.chain().focus().toggleUnderline().run()
+                  }
+                >
                   <UnderlineIcon /> Underline{" "}
                   <MenubarShortcut>Ctrl+U </MenubarShortcut>
                 </MenubarItem>
-                <MenubarItem>
+                <MenubarItem
+                  onClick={() => editor?.chain().focus().toggleStrike().run()}
+                >
                   <StrikethroughIcon /> Strikethrough&nbsp;
                   <MenubarShortcut>Ctrl+Sft+S</MenubarShortcut>
                 </MenubarItem>
               </MenubarSubContent>
             </MenubarSub>
-            <MenubarItem>
+            <MenubarItem
+              onClick={() => editor?.chain().focus().toggleStrike().run()}
+            >
               <RemoveFormattingIcon className="size-4 " />
               Remove Formatting
             </MenubarItem>
