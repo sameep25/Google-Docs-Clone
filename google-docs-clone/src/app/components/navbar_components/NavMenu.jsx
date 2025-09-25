@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Menubar,
@@ -31,7 +32,20 @@ import {
   Undo2Icon,
 } from "lucide-react";
 import { BsFilePdf } from "react-icons/bs";
+import { useEditorStore } from "@/store/use-editor-store";
+
 const NavMenu = () => {
+  const { editor } = useEditorStore();
+
+  const handleAddTable = (rows, cols) => {
+    console.log(rows, cols);
+    editor
+      ?.chain()
+      .focus()
+      .insertTable({ rows, cols, withHeaderRow: false })
+      .run();
+  };
+
   return (
     <div className="flex ">
       <Menubar className="border-none bg-transparent shadow-none h-auto p-0 ">
@@ -107,29 +121,15 @@ const NavMenu = () => {
           </MenubarTrigger>
           <MenubarContent>
             {/* Undo */}
-            <MenubarItem>
+            <MenubarItem onClick={() => editor?.chain().focus().undo().run()}>
               <Undo2Icon className="size-4 " />
               Undo <MenubarShortcut>Ctrl+Z</MenubarShortcut>
             </MenubarItem>
             {/* Redo */}
-            <MenubarItem>
+            <MenubarItem onClick={() => editor?.chain().focus().redo().run()}>
               <Redo2Icon className="size-4 " />
               Redo <MenubarShortcut>Ctrl+Y</MenubarShortcut>
             </MenubarItem>
-            {/* Table Submenu */}
-            <MenubarSub>
-              <MenubarSubTrigger>
-                {" "}
-                <Grid3X3Icon className="size-4 mr-2" /> Table
-              </MenubarSubTrigger>
-              <MenubarSubContent className="[&>*]:pl-2">
-                <MenubarItem>1 X 1</MenubarItem>
-                <MenubarItem>2 X 2</MenubarItem>
-                <MenubarItem>3 X 3</MenubarItem>
-                <MenubarItem>4 X 4</MenubarItem>
-                <MenubarItem>5 X 5</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
           </MenubarContent>
         </MenubarMenu>
 
@@ -139,10 +139,30 @@ const NavMenu = () => {
             Insert
           </MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              <FileIcon />
-              Save
-            </MenubarItem>
+            {/* Table Submenu */}
+            <MenubarSub>
+              <MenubarSubTrigger>
+                {" "}
+                <Grid3X3Icon className="size-4 mr-2" /> Table
+              </MenubarSubTrigger>
+              <MenubarSubContent className="[&>*]:pl-2">
+                <MenubarItem onClick={() => handleAddTable(1, 1)}>
+                  1 X 1
+                </MenubarItem>
+                <MenubarItem onClick={() => handleAddTable(2, 2)}>
+                  2 X 2
+                </MenubarItem>
+                <MenubarItem onClick={() => handleAddTable(3, 3)}>
+                  3 X 3
+                </MenubarItem>
+                <MenubarItem onClick={() => handleAddTable(4, 4)}>
+                  4 X 4
+                </MenubarItem>
+                <MenubarItem onClick={() => handleAddTable(5, 5)}>
+                  5 X 5
+                </MenubarItem>
+              </MenubarSubContent>
+            </MenubarSub>
           </MenubarContent>
         </MenubarMenu>
 
